@@ -58,10 +58,6 @@ const config = {
     '~/plugins/contentful'
   ],
 
-  router: {
-    base: '/justalever2017/'
-  },
-
   generate: {
     routes() {
       return Promise.all([
