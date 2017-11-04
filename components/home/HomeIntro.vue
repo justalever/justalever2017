@@ -1,12 +1,12 @@
 <template>
 	<div class="home-intro container">
-		<div class="row between">
-			<div class="home-intro__wrap one-half">
+		<div class="row between home-intro__wrap">
+			<div class="one-half">
 				<h4 class="home-intro__tagline eyebrow">{{ tagline }}</h4>
 				<vue-markdown class="home-intro__lead">{{ lead }}</vue-markdown>
 				<vue-markdown class="home-intro__sublead">{{ sublead }}</vue-markdown>
 			</div>
-			<div class="home-intro__wrap one-half cta-block">
+			<div class="one-half cta-block">
 				<p class="home-intro__cta">{{ cta }}</p>
 				<p class="home-intro__email">
 					<svg xmlns="http://www.w3.org/2000/svg" width="16" height="14" viewBox="0 0 16 14"><path fill="#F4C051" opacity=".748" d="M9.3.3l-1.4 1.4 4.3 4.3h-12.2v2h12.2l-4.3 4.3 1.4 1.4 6.7-6.7z"/></svg> <a class="email-link" href="mailto:andy@justlever.com">{{ email }}</a></span>
@@ -40,11 +40,11 @@ export default {
 <style scoped>
 :root {
 	--gibson: "Gibson-Regular", sans-serif;
-};
+}
 
 .home-intro {
 	position: relative;
-	z-index: 5;
+	z-index: 99;
 }
 .home-intro__lead {
 	font-size: 1.375rem;

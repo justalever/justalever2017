@@ -1,7 +1,20 @@
-const config = require('./.contentful.json')
+const {getConfigForKeys} = require('./lib/config.js')
+const ctfConfig = getConfigForKeys([
+  'CTF_SPACE_ID',
+  'CTF_CDA_ACCESS_TOKEN',
+  'CTF_CDA_ACCESS_TOKEN',
+  'CTF_WORK_POST_TYPE_ID',
+  'CTF_SIDEPROJECT_POST_TYPE_ID',
+  'CTF_CMA_ACCESS_TOKEN'
+])
 const {createClient} = require('./plugins/contentful')
+const cdaClient = createClient(ctfConfig)
+const cmaContentful = require('contentful-management')
+const cmaClient = cmaContentful.createClient({
+  accessToken: ctfConfig.CTF_CMA_ACCESS_TOKEN
+})
 
-module.exports = {
+const config = {
   /*
   ** Headers of the page
   */
@@ -22,34 +35,43 @@ module.exports = {
   ** Customize the progress bar color
   */
   loading: { color: '#F4C051' },
+
   css: [
     'assets/fonts.css',
     'assets/style.scss'
   ],
+
   postcss: [
     require('autoprefixer')({
       browsers: ['> 5%']
     })
   ],
+
   env: {
-    CTF_SPACE_ID: config.CTF_SPACE_ID,
-    CTF_CDA_ACCESS_TOKEN: config.CTF_CDA_ACCESS_TOKEN,
-    CTF_WORK_POST_TYPE_ID: config.CTF_WORK_POST_TYPE_ID,
-    CTF_SIDEPROJECT_POST_TYPE_ID: config.CTF_SIDEPROJECT_POST_TYPE_ID
+    CTF_SPACE_ID: ctfConfig.CTF_SPACE_ID,
+    CTF_CDA_ACCESS_TOKEN: ctfConfig.CTF_CDA_ACCESS_TOKEN,
+    CTF_WORK_POST_TYPE_ID: ctfConfig.CTF_WORK_POST_TYPE_ID,
+    CTF_SIDEPROJECT_POST_TYPE_ID: ctfConfig.CTF_SIDEPROJECT_POST_TYPE_ID
   },
+
+  plugins: [
+    '~/plugins/contentful'
+  ],
+
   router: {
     base: '/justalever2017/'
   },
+
   generate: {
     routes() {
       return Promise.all([
         // get all blog posts
         cdaClient.getEntries({
-          'content_type': env.CTF_WORK_POST_TYPE_ID
+          'content_type': ctfConfig.CTF_WORK_POST_TYPE_ID
         }),
         // get the blog post content type
-        cmaClient.getSpace(env.CTF_SPACE_ID)
-          .then(space => space.getContentType(env.CTF_WORK_POST_TYPE_ID))
+        cmaClient.getSpace(ctfConfig.CTF_SPACE_ID)
+          .then(space => space.getContentType(ctfConfig.CTF_WORK_POST_TYPE_ID))
       ]).then(([entries]) => {
         return [
           // map entries to URLs
@@ -63,18 +85,12 @@ module.exports = {
   ** Build configuration
   */
   build: {
-    /*
-    ** Run ESLint on save
-    */
-    // extend (config, ctx) {
-    //   if (ctx.dev && ctx.isClient) {
-    //     config.module.rules.push({
-    //       enforce: 'pre',
-    //       test: /\.(js|vue)$/,
-    //       loader: 'eslint-loader', 
-    //       exclude: /(node_modules)/
-    //     })
-    //   }
-    // }
+    postcss: [
+      require('autoprefixer')({
+        browsers: ['> 5%']
+      })
+    ]
   }
 }
+
+module.exports = config
