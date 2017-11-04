@@ -1,0 +1,53 @@
+.header {
+  .logo {
+    top: 14px;
+    position: relative;
+  }  
+  &__dark {
+    padding-top: 1rem;
+  }
+  &__work {
+    background-color: white;
+    position: fixed;
+    top:0;
+    left:0;
+    width: 100%;
+    z-index: 99;
+    vertical-align: middle;
+    padding-top: 0;
+  }
+  &__shadow {
+    box-shadow: 0 1px 16px rgba(black, .1);
+  }
+}
+.header nav {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.header .email {
+  padding: 1rem 0;
+  @include breakpoint(medium) {
+    display: none;
+  }
+}
+.header .email .email-link {
+  font-family: "Gibson-Regular", sans-serif;
+  color: var(--brand-primary);
+  padding-top: .25rem;
+  background: none;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+}
+.header .email svg {
+  position: relative;
+  top: 3px;
+}
+.header .email span {
+  color: var(--brand-primary);
+  font-family: "Gibson-Regular", sans-serif;
+  padding-left: 1rem;
+  text-align: right;
+}

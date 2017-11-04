@@ -1,0 +1,40 @@
+.container {
+	max-width: 1420px;
+	margin: 0 auto;
+	padding: 0 1rem;
+	position: relative;
+}
+.row {
+	box-sizing: border-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 0;
+  -ms-flex: 0 1 auto;
+  flex: 0 1 auto;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+.between {
+	-webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+.around {
+	 -ms-flex-pack: distribute;
+  justify-content: space-around;
+}
+.one-half {
+	-ms-flex-preferred-size: 50%;
+  flex-basis: 50%;
+  max-width: 50%;
+  @media screen and (max-width: 768px) {
+  	flex-basis: 100%;
+  	max-width: 100%;
+  	-ms-flex-preferred-size: 100%;
+  }
+}

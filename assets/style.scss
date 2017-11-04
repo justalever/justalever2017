@@ -1,0 +1,18 @@
+:root {
+	--brand-primary: #E6A200;
+	--brand-gray: #8F8F8F;
+	--text-color: #333333;
+	--brand-primary-hover: #E1AE41;
+}
+@import "_partials/mixins/mixins";
+@import "_partials/typography";
+@import "_partials/animate";
+@import "_partials/body";
+@import "_partials/grid";
+@import "_partials/forms";
+@import "_partials/header";
+@import "_partials/modal";
+@import "_partials/footer";
+@import "_partials/home/home";
+@import "_partials/work/work";
+

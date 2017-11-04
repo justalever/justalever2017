@@ -1,0 +1,99 @@
+.hero__content {
+  position: relative;
+}
+.hero__base {
+  padding: 4rem 0;
+  position: relative;
+  z-index: 99;
+}
+.hero__headline {
+  font-size: 5.5rem;
+  line-height: 6rem;
+  letter-spacing: 1px;
+  margin: .5rem 0 .5rem 0;
+}
+.hero__andy {
+  background: url('~/assets/images/hero-andy-bg.jpg') no-repeat;
+  position: absolute;
+  top: 0;
+  right: 1rem;
+  width: 1135px;
+  height: 707px;
+  z-index: 1;
+  text-align: right;
+  animation-delay: .5s;
+  
+}
+.hero__image {
+  padding-right: 1rem;
+  animation-delay: 1.5s;
+}
+.hero__slogan {
+  font-size: 1.48rem;
+  line-height: 2rem;
+  color: #CDCDCD;
+  max-width: 800px;
+  margin-bottom: 2rem;
+}
+.grid__row {
+  display: grid;
+  grid-template-columns: 384px 1fr;
+}
+.grid__sub-row {
+  display: grid;
+  grid-template-columns: 192px 192px 1fr;
+}
+.links .link__section-title {
+  margin-bottom: 0;
+  font-family: "Gibson-Regular", sans-serif;
+  color: var(--brand-primary);
+}
+.links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 .75rem 0;
+}
+.links ul li a {
+  color: white;
+  text-decoration: none;
+  transition: ease color .3s;
+}
+.links ul li a:hover {
+  color: var(--brand-primary);
+}
+
+
+@media screen and (max-width: 768px) {
+  .grid__row {
+    grid-template-columns: 1fr;
+  }
+  .hero__base {
+    padding: 0;
+  }
+  .hero__headline {
+    font-size: 4rem;
+    line-height: 4rem;
+    letter-spacing: 1px;
+    margin: .25rem 0 .25rem 0;
+  }
+  .hero__andy {
+    background: transparent;
+    position: absolute;
+    top: 350px;
+    right:0;
+    width: 100%;
+    height: auto;
+    z-index: -1;
+    text-align: right;
+  }
+  .hero__eyebrow {
+    margin-bottom: 0;
+  }
+  .hero__image {
+    width: 320px;
+    height: auto;
+  }
+  .links ul {
+    margin-bottom: 0;
+  }
+}

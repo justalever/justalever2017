@@ -1,0 +1,41 @@
+<template>
+  <div>
+    <MainMenu isWork="true" hasShadow="true"/>	
+      <div class="container">
+        <div class="work--image-wrapper">
+          <img :src="post.fields.workImage.fields.file.url + '?w=960&h=447&fit=thumb&f=top'"  :alt="post.fields.workTitle" class="work__feature-image" />
+        </div>
+        <article class="work__article">
+          <h1 class="work__title h1">{{ post.fields.workTitle }}</h1>
+          <vue-markdown class="work__content">{{ post.fields.workDescription }}</vue-markdown>
+      </article>
+    </div>
+	</div>
+</template>
+
+<script>
+import {createClient} from '~/plugins/contentful.js'
+import VueMarkdown from 'vue-markdown'
+import MainMenu from '~/components/MainMenu.vue'
+import WorkPreview from '~/components/WorkPreview.vue'
+
+const client = createClient()
+
+export default {
+  asyncData ({ env, params }) {
+    return client.getEntries({
+      'content_type': env.CTF_WORK_POST_TYPE_ID,
+      'fields.slug': params.slug,
+    }).then(entries => {
+      return {
+        post: entries.items[0]
+      }
+    }).catch(console.error)
+  },
+  components: {
+    MainMenu,
+    VueMarkdown
+  }
+}
+</script>
+
