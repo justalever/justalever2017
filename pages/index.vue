@@ -80,12 +80,3 @@ export default {
 }
 </script>
 
-<style scoped>
-.page-enter-active, .page-leave-active {
-  transition: opacity .4s ease-in-out;
-}
-.page-enter, .page-leave-active {
-  opacity: 0;
-}
-</style>
-

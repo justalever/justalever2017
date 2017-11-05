@@ -19,3 +19,9 @@ img {
 	padding: 0 .5rem 1rem 0;
 	color: var(--brand-primary);
 }
+.page-enter-active, .page-leave-active {
+  transition: opacity .4s ease-in-out;
+}
+.page-enter, .page-leave-active {
+  opacity: 0;
+}

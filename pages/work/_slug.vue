@@ -3,8 +3,9 @@
     <MainMenu isWork="true" hasShadow="true"/>	
       <div class="container">
         <div class="work--image-wrapper">
-          <img :src="post.fields.workImage.fields.file.url + '?w=960&h=447&fit=thumb&f=top'"  :alt="post.fields.workTitle" class="work__feature-image" />
+          <img :src="post.fields.workImage.fields.file.url + '?w=1000&h=700&fit=thumb&f=top'"  :alt="post.fields.workTitle" class="work__feature-image" />
         </div>
+        <div class="work-hero-slant"></div>
         <article class="work__article">
           <h1 class="work__title h1">{{ post.fields.workTitle }}</h1>
           <vue-markdown class="work__content">{{ post.fields.workDescription }}</vue-markdown>
