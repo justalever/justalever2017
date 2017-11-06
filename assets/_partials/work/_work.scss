@@ -1,4 +1,8 @@
 .header__work { 
+  .container {
+    max-width: 100%;
+    margin: 0 auto;
+  }
   .pagination {
     font-family: "Gibson-Semibold", sans-serif;
     color: var(--brand-primary);

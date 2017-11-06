@@ -86,6 +86,7 @@
   transition: all .3s ease;
   font-family: "Gibson-Regular", sans-serif;
   position: relative;
+  z-index: 10;
 }
 @media screen and (max-width: 767px) {
   .modal-container { 

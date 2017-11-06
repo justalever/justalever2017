@@ -47,8 +47,15 @@
 		font-family: "Gibson-Semibold", sans-serif;
 		text-transform: uppercase;
 		line-height: 2.4rem;
+		@include breakpoint(medium) {
+				line-height: 3rem;
+				font-size: 1.5rem;
+		}
 		a { 
 			color: var(--text-color);
+			@include breakpoint(medium) {
+					display: block;
+			}
 			&:hover {
 				color: var(--brand-primary);
 			}

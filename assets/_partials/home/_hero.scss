@@ -21,12 +21,12 @@
   height: 707px;
   z-index: 1;
   text-align: right;
-  animation-delay: .5s;
-  
+}
+@media screen and (max-width:1280px) {
+  .hero__andy, .hero_image { display: none; }
 }
 .hero__image {
   padding-right: 1rem;
-  animation-delay: 1s;
 }
 .hero__slogan {
   font-size: 1.48rem;
@@ -76,22 +76,9 @@
     letter-spacing: 1px;
     margin: .25rem 0 .25rem 0;
   }
-  .hero__andy {
-    background: transparent;
-    position: absolute;
-    top: 350px;
-    right:0;
-    width: 100%;
-    height: auto;
-    z-index: -1;
-    text-align: right;
-  }
   .hero__eyebrow {
+    margin-top: 2rem;
     margin-bottom: 0;
-  }
-  .hero__image {
-    width: 320px;
-    height: auto;
   }
   .links ul {
     margin-bottom: 0;

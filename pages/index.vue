@@ -45,7 +45,7 @@ export default {
     return Promise.all([
       client.getEntries({
         'content_type': env.CTF_WORK_POST_TYPE_ID,
-        order: '-sys.createdAt',
+        order: '-sys.updatedAt',
         limit: 5
       }),
       client.getEntries({

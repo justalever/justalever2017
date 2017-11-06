@@ -23,7 +23,15 @@
 
 .home-work {
   position: relative;
-  z-index: 99;
+  z-index: 77;
+  .btn-link {
+    display: block;
+    text-align: right;
+    position: absolute;
+    top: -3rem;
+    right: 1rem;
+    font-size: 1.5rem;
+  }
 }
 
 .work-list {
@@ -64,15 +72,11 @@
     grid-row: 2;
   }
 }
- .work__item {
-  img { transition: all ease .3s; }
-    &:hover {
-      img {
-        opacity: .85;
-      }
-    }
+.work-item:hover {
+  .work__title a {
+    color: var(--brand-primary-hover);
   }
-
+}
 .work__title {
   font-family: "Gibson-Regular", sans-serif;
   font-weight: normal;

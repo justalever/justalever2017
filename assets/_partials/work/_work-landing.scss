@@ -3,4 +3,15 @@
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 1rem;
 
+  @include breakpoint(medium) {
+  	grid-template-columns: 1fr;
+  	margin-top: 1rem;
+		.work-item {
+			margin: .5rem 0;
+		}
+  	.work-item img {
+  		width: 100%;
+  	}
+  }
+
 }

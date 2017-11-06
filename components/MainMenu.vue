@@ -22,9 +22,7 @@
 		</div>
 	</header>
 
-	<Modal v-if="showModal" @close="showModal = false">
-  
-  </Modal>
+	<Modal v-if="showModal" @close="showModal = false"></Modal>
 </div>
 </template>
 

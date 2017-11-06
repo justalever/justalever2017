@@ -40,7 +40,8 @@ a {
 .big-title {
 	@include font-size(5, 5);
 	@include breakpoint(medium) {
-		@include font-size(3.5, 3.5);
+		@include font-size(3.25, 3.25);
+		margin-bottom: 1rem;
 	}
 }
 
