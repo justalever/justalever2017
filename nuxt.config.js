@@ -75,7 +75,6 @@ const config = {
   plugins: [
     '~/plugins/contentful'
   ],
-  router: { base: '/justalever2017/' },
 
   generate: {
     routes() {
