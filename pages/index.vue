@@ -69,7 +69,7 @@ export default {
     VueMarkdown
   },
   head: {
-    title: 'Justalever Creative | Freelance Web Designer St. Louis, Missouri',
+    title: 'Home',
     meta: [
       { hid: 'description', name: 'description', content: 'Justalever aka Andy Leverenz, freelance web designer Saint Louis. Specializing in web design, development, WordPress, mobile apps, user experience and responsive design.' }
     ]

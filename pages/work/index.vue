@@ -33,6 +33,12 @@ export default {
   components: {
     MainMenu,
     WorkPreview
-  }
+  },
+  head: {
+    title: 'All Work',
+    meta: [
+      { hid: 'description', name: 'description', content: 'View all the work of product designer and frontend developer Andy Leverenz.' }
+    ]
+  },
 }
 </script>

@@ -7,7 +7,7 @@
         </div>
         <div class="work-hero-slant"></div>
         <article class="work__article">
-          <h1 class="work__title h1">{{ post.fields.workTitle }}</h1>
+          <h1 class="work__title h1" :title="post.fields.workTitle">{{ post.fields.workTitle }}</h1>
           <vue-markdown class="work__content">{{ post.fields.workDescription }}</vue-markdown>
       </article>
     </div>
@@ -23,6 +23,20 @@ import WorkPreview from '~/components/WorkPreview.vue'
 const client = createClient()
 
 export default {
+  name: 'post',
+  data () {
+    return {
+      title: "title"
+    }
+  },
+  head() {
+    return {
+      title: this.post.fields.workTitle,
+      meta: [
+        { hid: 'description', name: 'description', content: this.post.fields.workSeoDescription }
+      ]
+    }
+  },
   asyncData ({ env, params }) {
     return client.getEntries({
       'content_type': env.CTF_WORK_POST_TYPE_ID,
@@ -37,6 +51,7 @@ export default {
     MainMenu,
     VueMarkdown
   }
+ 
 }
 </script>
 

@@ -27,7 +27,7 @@ img {
 	color: var(--brand-primary);
 }
 .page-enter-active, .page-leave-active {
-  transition: opacity .4s ease-in-out;
+  transition: opacity .6s ease-in-out;
 }
 .page-enter, .page-leave-active {
   opacity: 0;

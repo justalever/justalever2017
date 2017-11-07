@@ -19,7 +19,8 @@ const config = {
   ** Headers of the page
   */
   head: {
-    title: 'Justalever Creative | Freelance Product Designer St. Louis, Missouri',
+    title: 'Justalever Creative',
+    titleTemplate: '%s | Justalever.com',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -75,6 +76,7 @@ const config = {
     '~/plugins/contentful'
   ],
   router: { base: '/justalever2017/' },
+
   generate: {
     routes() {
       return Promise.all([

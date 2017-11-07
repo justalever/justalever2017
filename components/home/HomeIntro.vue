@@ -42,9 +42,6 @@ export default {
 </script>
 
 <style scoped>
-:root {
-	--gibson: "Gibson-Regular", sans-serif;
-}
 
 .home-intro {
 	position: relative;
@@ -58,12 +55,12 @@ export default {
 	text-align: right;
 }
 .home-intro__cta {
-	font-family: var(--gibson);
+	font-family: "Gibson-Regular", sans-serif;
 	margin: 0;
 }
 .home-intro__email .email-link {
 	color: #808080;
-	font-family: var(--gibson);
+	font-family: "Gibson-Regular", sans-serif;
 	margin: 0;
 	text-decoration: none;
 	background: none;
